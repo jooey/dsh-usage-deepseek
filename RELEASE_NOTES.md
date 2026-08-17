@@ -1,5 +1,10 @@
 # Release Notes
 
+## v1.0.1
+
+- README 顶部加入 Quick start（`dsh plugin --profile web add dsh-usage-deepseek`）和 GitHub/npm 链接
+- Git 安装链接改为 `jooey/dsh-usage-deepseek`
+
 ## v1.0.0
 
 DSH 插件首发：在对话里查看你的 DeepSeek provider 账户余额。
