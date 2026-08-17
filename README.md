@@ -109,10 +109,10 @@ npm install dsh-usage-deepseek --save --registry=https://registry.npmjs.org
 ### 方式 B：直接给 DSH 传 GitHub 链接（git 安装）
 
 ```bash
-dsh plugin --profile web add github:<用户名>/dsh-usage-deepseek
+dsh plugin --profile web add github:jooey/dsh-usage-deepseek
 
 # 或完整 URL 形式（任选其一）
-dsh plugin --profile web add https://github.com/<用户名>/dsh-usage-deepseek.git
+dsh plugin --profile web add https://github.com/jooey/dsh-usage-deepseek.git
 ```
 
 > 注意：仓库必须是**公开**的；安装器会直接以仓库根目录的
