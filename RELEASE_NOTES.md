@@ -1,5 +1,14 @@
 # Release Notes
 
+## v1.1.2
+
+**极简 DSH 用量监控 · 统一格式**
+
+- README 全面重写：中英双语，主打「极简 DSH 用量监控」，与五插件家族（OpenCode Go / DeepSeek / MiniMax / Kimi / GLM）文案统一，移除开发成本统计
+- package 元数据补齐（author / repository / keywords）、smoke test 环境变量回落
+
+**English**: bilingual README rewritten under the unified "minimal DSH usage monitor" family branding; dev-cost stats removed; package metadata completed.
+
 ## v1.1.1
 
 - README：修正波峰/波谷图标示意（波谷使用灰色圆圈表示灰色鲸鱼）

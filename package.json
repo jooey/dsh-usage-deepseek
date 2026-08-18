@@ -1,12 +1,12 @@
 {
   "name": "dsh-usage-deepseek",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "DSH command plugin: /usage-deepseek command and composer readout for your DeepSeek provider account balance",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
-  "author": "",
+  "author": "jooey",
   "keywords": [
     "dsh",
     "deepseek-harness",
@@ -27,6 +27,8 @@
   },
   "files": [
     "lib",
+    "install.sh",
+    "install.ps1",
     "README.md",
     "LICENSE"
   ],
