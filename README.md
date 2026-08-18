@@ -69,7 +69,7 @@ DeepSeek platform: https://platform.deepseek.com/usage
 
 ```text
 波峰: [ 🔵 蓝色鲸鱼 ] Balance ¥133.58 · Peak
-波谷: [ 🐋 主题色鲸鱼 ] Balance ¥133.58 · Off-peak 50%
+波谷: [ ⚪ 灰色鲸鱼 ] Balance ¥133.58 · Off-peak 50%
 ```
 
 ## 第 0 步：安装 DSH
@@ -193,6 +193,24 @@ dsh --profile web --dump-config
 - `DEEPSEEK_API_KEY is not configured` —— 检查 `~/.dsh/.credentials.yaml` 是否已写入 `DEEPSEEK_API_KEY`。
 - `DeepSeek balance API returned HTTP 4xx` —— key 被额度接口拒绝；必须是有余额权限的 DeepSeek API key。
 - 右下角 readout 不显示 —— 先确认当前选中的模型是 **DeepSeek** provider；若是，再硬刷新浏览器（`Ctrl+Shift+R`）。若控制台报 `Failed to load plugins`，确认包已正确安装、patch 里的 `name` 是 `dsh-usage-deepseek`。
+
+## 开发成本（透明记录）
+
+本插件由 **DeepSeek** 协助开发。截至当前版本发布，本次开发会话的 DSH 统计为：
+
+| 指标 | 数值 |
+|---|---|
+| Turns | 16 |
+| Steps | 297 |
+| LLM 耗时 | 41m54s |
+| Tool call | 23m22s |
+| TTFT avg | 2.2s |
+| 解码速度 | 85 tok/s |
+| Cache hit | 100% |
+| Input | 63.5M tok |
+| Output | 159K tok |
+
+> 以上为该 DSH 会话的累计统计，仅作开发透明度记录，不代表插件运行时消耗。插件本身只调用 DeepSeek 官方余额接口，不产生 LLM token。
 
 ## 为开发者
 
