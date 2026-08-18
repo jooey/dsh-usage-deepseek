@@ -1,6 +1,6 @@
 {
   "name": "dsh-usage-deepseek",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "DSH command plugin: /usage-deepseek command and composer readout for your DeepSeek provider account balance",
   "type": "module",
   "main": "lib/index.js",

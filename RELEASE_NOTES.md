@@ -1,5 +1,12 @@
 # Release Notes
 
+## v1.1.0
+
+- 新增波峰/波谷显示：北京时间 09:00-12:00、14:00-18:00 为高峰，其余为空闲时段（价格为高峰的 50%）
+- 波峰时右下角鲸鱼图标显示为 DeepSeek 蓝色，并标注 `Peak`
+- 波谷时右下角鲸鱼图标保持主题色，并标注 `Off-peak 50%`
+- `/usage-deepseek` 报告新增 `Pricing:` 行，显示当前波峰/波谷状态
+
 ## v1.0.1
 
 - README 顶部加入 Quick start（`dsh plugin --profile web add dsh-usage-deepseek`）和 GitHub/npm 链接

@@ -34,6 +34,7 @@ dsh plugin --profile web add dsh-usage-deepseek
 - 输入 **`/usage-deepseek`** —— 打印完整账户余额报告。
 - 输入框右下角常驻一个小读条 —— DeepSeek 鲸鱼图标 + `Balance ¥x` 余额，每分钟自动刷新，点击打开 DeepSeek 平台用量页。
 - 读条只在模型选择器选中 **DeepSeek** provider 时出现。
+- 显示波峰/波谷：高峰时段（北京时间 09:00-12:00、14:00-18:00）显示**蓝色鲸鱼 + Peak**；其余空闲时段为高峰价格的 50%，显示**主题色鲸鱼 + Off-peak 50%**。
 
 ## DeepSeek provider 能提供什么样的用量统计？
 
@@ -49,6 +50,8 @@ dsh plugin --profile web add dsh-usage-deepseek
 
 因此本插件展示的“用量/额度统计”就是 DeepSeek 官方 **账户余额**：状态（可用/不可用）和各币种总余额；赠送额 / 充值额只在非 0 时出现在 `/usage-deepseek` 报告里（granted 为 0 时 total 与 topped-up 相同，重复展示没有意义）。密钥通过 harness 凭据层（`~/.dsh/.credentials.yaml` 或环境变量里的 `DEEPSEEK_API_KEY`）**只在主机端解析**，绝不会进浏览器、不会被打包进前端代码。
 
+> 波峰/波谷说明：高峰时段为北京时间 09:00-12:00、14:00-18:00；其余为空闲时段，价格为高峰时段的 50%。readout 会随北京时间实时切换（无需关心本机时区）。
+
 ## 截图 / 效果
 
 ```text
@@ -57,13 +60,16 @@ DeepSeek (deepseek-official) usage
 Status: available
 CNY: total ¥133.58
 
+Pricing: Peak · Beijing 09:00-12:00, 14:00-18:00
+
 DeepSeek platform: https://platform.deepseek.com/usage
 ```
 
 输入框底部工具行（模型选择器左侧，且仅选中 DeepSeek 时）:
 
 ```text
-[ 🐋 DeepSeek 图标 ] Balance ¥133.58
+波峰: [ 🔵 蓝色鲸鱼 ] Balance ¥133.58 · Peak
+波谷: [ 🐋 主题色鲸鱼 ] Balance ¥133.58 · Off-peak 50%
 ```
 
 ## 第 0 步：安装 DSH

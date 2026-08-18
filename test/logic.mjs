@@ -9,7 +9,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url)); // .../dsh-usage-deepseek/test
 const pluginDir = dirname(here); // .../dsh-usage-deepseek
-const { fetchDeepSeekBalance, formatDeepSeekBalance, formatAmount } = await import(pathToFileURL(join(pluginDir, "lib", "logic.js")).href);
+const { fetchDeepSeekBalance, formatDeepSeekBalance, formatAmount, formatPricingWindow, isPeakTime } = await import(pathToFileURL(join(pluginDir, "lib", "logic.js")).href);
 
 // Read the real key without printing it. On Windows use USERPROFILE, on
 // POSIX fall back to HOME (USERPROFILE is undefined on non-Windows).
@@ -59,3 +59,10 @@ console.log(JSON.stringify(snapshot, null, 2));
 console.log("--- formatAmount ---");
 console.log(formatAmount("134.02", "CNY"));
 console.log(formatAmount("10.00", "USD"));
+console.log("--- pricing window ---");
+console.log("now:", formatPricingWindow());
+console.log("2026-08-18T02:00:00Z (Beijing 10:00):", formatPricingWindow(new Date("2026-08-18T02:00:00Z")));
+console.log("2026-08-18T06:00:00Z (Beijing 14:00):", formatPricingWindow(new Date("2026-08-18T06:00:00Z")));
+console.log("2026-08-18T10:00:00Z (Beijing 18:00):", formatPricingWindow(new Date("2026-08-18T10:00:00Z")));
+console.log("isPeakTime 10:00 BJ:", isPeakTime(new Date("2026-08-18T02:00:00Z")));
+console.log("isPeakTime 18:00 BJ:", isPeakTime(new Date("2026-08-18T10:00:00Z")));
