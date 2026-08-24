@@ -15,6 +15,24 @@ export const API_KEY_REF: string;
 export const DEFAULT_BASE_URL: string;
 export const PLATFORM_URL: string;
 
+/** DeepSeek peak/off-peak schedule constants (Beijing time). */
+export const BEIJING_TIME_ZONE: "Asia/Shanghai";
+export const PEAK_WINDOWS: Array<{ start: number; end: number }>;
+export const PEAK_WINDOW_LABEL: string;
+/** Since 2026-08-23 weekends bill at the off-peak rate all day. */
+export const WEEKEND_ALL_DAY_OFF_PEAK_SINCE: string;
+
+/** Current minute-of-day in Beijing time (0-1439). */
+export declare function beijingMinutesNow(date?: Date): number;
+/** Day of week in Beijing time: 0 = Sunday … 6 = Saturday. */
+export declare function beijingDayOfWeek(date?: Date): number;
+/** True when Beijing time is on a Saturday or Sunday. */
+export declare function isBeijingWeekend(date?: Date): boolean;
+/** True while Beijing time bills at the peak rate; weekends never bill at peak. */
+export declare function isPeakTime(date?: Date): boolean;
+/** One-line pricing window status for the /usage-deepseek report. */
+export declare function formatPricingWindow(date?: Date): string;
+
 export interface FetchDeepSeekBalanceResult {
   ok: boolean;
   balance?: {
